@@ -15,6 +15,12 @@ namespace PF_MamaniL.Controllers
             return ManejadorUsuario.IniciarSesión(usuario, contraseña);
         }
 
+        [HttpGet("{usuario}")]
+        public Usuario ObtenerUsuario([FromRoute] string usuario)
+        {
+            return ManejadorUsuario.Obtener(usuario);
+        }
+
         [HttpPost]
         public string CrearUsuario([FromBody] Usuario usuario)
         {
@@ -25,12 +31,6 @@ namespace PF_MamaniL.Controllers
         public string ModificarUsuario([FromBody] Usuario usuario)
         {
             return (ManejadorUsuario.Modificar(usuario) != 0) ? "Usuario modificado" : "Usuario no modificado";
-        }
-
-        [HttpGet("{usuario}")]
-        public Usuario ObtenerUsuario([FromRoute] string usuario)
-        {
-            return ManejadorUsuario.Obtener(usuario);
         }
 
         [HttpDelete("{id}")]
