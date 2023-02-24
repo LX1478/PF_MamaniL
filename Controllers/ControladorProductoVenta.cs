@@ -5,14 +5,14 @@ using PF_MamaniL.Models;
 
 namespace PF_MamaniL.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/ProductoVendido")]
     [ApiController]
     public class ControladorProductoVenta : ControllerBase
     {
-        [HttpGet("{id}")]
-        public List<Producto> TraerProductosVendidos([FromRoute] long id)
+        [HttpGet("{idUsuario}")]
+        public List<Producto> TraerProductosVendidos([FromRoute] long idUsuario)
         {
-            return ManejadorProductoVendido.ObtenerProductos(id);
+            return ManejadorProductoVendido.ObtenerProductos(idUsuario);
         }
 
     }

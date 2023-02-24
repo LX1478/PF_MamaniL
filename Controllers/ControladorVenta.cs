@@ -5,20 +5,20 @@ using PF_MamaniL.Models;
 
 namespace PF_MamaniL.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Venta")]
     [ApiController]
     public class ControladorVenta : ControllerBase
     {
-        [HttpGet("{id}")]
-        public List<Venta> TraerVentas([FromRoute] long id)
+        [HttpGet("{idUsuario}")]
+        public List<Venta> TraerVentas([FromRoute] long idUsuario)
         {
-            return ManejadorVenta.Obtener(id);
+            return ManejadorVenta.Obtener(idUsuario);
         }
 
-        [HttpPost("{id}")]
-        public string CargarVenta([FromRoute] long id, [FromBody] List<Producto> productos)
+        [HttpPost("{idUsuario}")]
+        public string CargarVenta([FromRoute] long idUsuario, [FromBody] List<Producto> productos)
         {
-            ManejadorVenta.Cargar(id, productos);
+            ManejadorVenta.Cargar(idUsuario, productos);
             return "Venta cargada";
         }
     }

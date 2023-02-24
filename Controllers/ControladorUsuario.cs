@@ -5,7 +5,7 @@ using PF_MamaniL.Models;
 
 namespace PF_MamaniL.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Usuario")]
     [ApiController]
     public class ControladorUsuario : ControllerBase
     {

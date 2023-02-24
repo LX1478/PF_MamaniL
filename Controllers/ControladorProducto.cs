@@ -5,7 +5,7 @@ using PF_MamaniL.Models;
 
 namespace PF_MamaniL.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Producto")]
     [ApiController]
     public class ControladorProducto : ControllerBase
     {
@@ -27,10 +27,10 @@ namespace PF_MamaniL.Controllers
             return (ManejadorProducto.Eliminar(id) != 0) ? "Producto eliminado" : "Producto no eliminado";
         }
 
-        [HttpGet("{id}")]
-        public List<Producto> TraerProductos([FromRoute] long id)
+        [HttpGet("{idUsuario}")]
+        public List<Producto> TraerProductos([FromRoute] long idUsuario)
         {
-            return ManejadorProducto.Obtener(id);
+            return ManejadorProducto.Obtener(idUsuario);
         }
     }
 }
